@@ -1,11 +1,9 @@
+from functools import partial, reduce
 from itertools import combinations
+import operator
 
 
-def prod(factors):
-    acc = 1
-    for f in factors:
-        acc *= f
-    return acc
+prod = partial(reduce, operator.mul)
 
 
 def solve(data, log):
