@@ -1,9 +1,12 @@
 == Advent of Code 2020
 Solutions in Python 3.
 
+View output on
+https://github.com/dainnilsson/adventofcode-2020/actions[Github Actions].
+
 
 === Running
-USe poetry to set up:
+Use poetry to set up:
 
   poetry install
 
