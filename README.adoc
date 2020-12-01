@@ -1,0 +1,28 @@
+== Advent of Code 2020
+Solutions in Python 3.
+
+
+=== Running
+USe poetry to set up:
+
+  poetry install
+
+Run the application:
+
+  poetry run aoc DAYS [-v|--verbose] [-i|--input FILE]
+
+
+=== Examples
+Run days 1 and 2:
+
+  poetry run aoc 1 2 --verbose
+
+Run day 1 using a specific input file:
+
+  poetry run aoc 1 -i myfile.txt
+
+
+=== Running tests
+Tests use pytest and can be run with poetry:
+
+  poetry run pytest [-v]
