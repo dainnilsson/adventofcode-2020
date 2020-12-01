@@ -12,11 +12,8 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - run: |
-        python -m pip install poetry
-        poetry install
     - name: Run Advent of Code 2020
-      run: poetry run aoc
+      run: python -m aoc20
 
   test:
     runs-on: ubuntu-latest
