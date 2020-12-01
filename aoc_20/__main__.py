@@ -18,7 +18,7 @@ def solve_part(gen, label):
 
 
 def solve_day(day, in_file, log):
-    module = importlib.import_module("aoc_20.day%d" % day)
+    module = importlib.import_module("solutions.day%d" % day)
     with open(in_file, "r") as f:
         data = f.read()
 

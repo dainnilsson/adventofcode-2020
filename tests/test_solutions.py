@@ -22,7 +22,7 @@ def test_solution(day, part):
     with open(out_f) as f:
         out = f.read()
 
-    module = importlib.import_module("aoc_20.day%d" % day)
+    module = importlib.import_module("solutions.day%d" % day)
     solver = module.solve(data, lambda *_: None)
 
     a = next(solver)

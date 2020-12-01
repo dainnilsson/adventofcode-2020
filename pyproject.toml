@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "aoc-20"
 version = "0.1.0"
-description = ""
+description = "Advent of Code 2020"
 authors = ["Dain Nilsson <dain@yubico.com>"]
+packages = [
+  { include = "aoc_20" },
+  { include = "solutions" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"
