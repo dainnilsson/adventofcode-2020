@@ -10,13 +10,11 @@ def solve(data, log):
             break
     yield v
 
-    s = 0
     rn = []
-    while s != v or len(rn) < 2:
-        if s > v:
-            s -= rn.pop(0)
-        else:
-            n = ns.pop(0)
-            rn.append(n)
-            s += n
+    while v or len(rn) < 2:
+        n = ns.pop(0)
+        rn.append(n)
+        v -= n
+        while v < 0:
+            v += rn.pop(0)
     yield min(rn) + max(rn)
