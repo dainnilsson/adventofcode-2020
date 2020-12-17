@@ -23,17 +23,16 @@ def step(state):
 
 
 def solve(data, log):
-    a, b = set(), set()
-    for y, line in enumerate(data.splitlines()):
-        for x, c in enumerate(line):
-            if c == "#":
-                a.add((x, y, 0))
-                b.add((x, y, 0, 0))
+    def run(dim, n):
+        s = {
+            (x, y) + (0,) * dim
+            for y, l in enumerate(data.splitlines())
+            for x, c in enumerate(l)
+            if c == "#"
+        }
+        for i in range(n):
+            s = step(s)
+        return len(s)
 
-    for i in range(6):
-        a = step(a)
-    yield len(a)
-
-    for i in range(6):
-        b = step(b)
-    yield len(b)
+    yield run(1, 6)
+    yield run(2, 6)
