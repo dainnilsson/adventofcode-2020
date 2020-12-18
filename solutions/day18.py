@@ -15,12 +15,11 @@ def run(line, ops=("+", "*")):
 
 
 def solve(data, log):
-    p = re.compile(r"\([^()]+\)")
-
+    p = re.compile(r"\(([^()]+)\)")
     for s in (run, lambda x: run(run(x, ("+",)))):
         a = 0
         for line in data.splitlines():
             while m := p.search(line):  # Goo goo g'joob, melon farmer!
-                line = line[: m.start()] + s(m[0][1:-1]) + line[m.end() :]
+                line = line[: m.start()] + s(m[1]) + line[m.end() :]
             a += int(s(line))
         yield a
